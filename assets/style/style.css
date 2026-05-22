@@ -1,5 +1,54 @@
-*{
-  font-family: "Exo 2", sans-serif;
-  font-size: 40px;
+:root{
+  --lighting-color: #0089b7;
+  --dark-color: #003d62;
+  --darker-color: #003251;
+  --secondary-color: #fff700;
+}
 
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Exo 2", sans-serif;
+}
+/* CONFIGURAR BODY Y HTML */
+html{
+  font-size: 62.5%;
+  /* 62.5% = 10px ??? */
+  /* facilita el trabajo con los rems */
+}
+
+body, html{
+  scroll-behavior: smooth ;
+  color: white;
+  line-height: 1.4;
+  background-color: rgb(207, 207, 207);
+}
+
+body{
+  font-size: 1.6rem;
+}
+
+/* CONFIGURAR CONTAINER */
+.container{
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 2.rem;
+  /* revisar eso de 2.rem !!!!  */
+}
+
+/* links */
+a{
+  text-decoration: none;
+  color: white;
+}
+ul{
+  list-style: none;
+}
+
+header{
+  position: sticky;
+  top:0;
+  z-index: 100;
+  background: var(--lighting-color);
 }
