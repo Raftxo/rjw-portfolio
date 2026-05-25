@@ -25,7 +25,7 @@
       <nav class="container">
         <div class="logo">Portfolio</div>
         <ul>
-          <li><a href="#hero">Home</a></li>
+          <li><a href="#hero" id="home_link">Home</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -42,7 +42,7 @@
             <span class="hi_text">Hi</span>, I am
             <span class="name_text">raftxo</span>
           </h1>
-          <h2>Full Stack Web Developer</h2>
+          <h2 id="typing_text">Full Stack Web Developer</h2>
         </div>
 
         <!-- https://the-silent-pulse.com/serprofes/20260427/reto/index.html galería -->
@@ -130,5 +130,15 @@
     <footer>
       <div class="container">&copy;2026 serProfés</div>
     </footer>
+    <script>
+      const homeLink = document.querySelector("#home_link");
+      const typingText = document.querySelector("#typing_text");
+
+      homeLink.addEventListener("click", () => {
+        typingText.style.animation = "none";
+        typingText.offsetHeight;
+        typingText.style.animation = "";
+      });
+    </script>
   </body>
 </html>
