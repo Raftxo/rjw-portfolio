@@ -17,6 +17,9 @@ html{
   /* 62.5% = 10px ??? */
   /* facilita el trabajo con los rems */
 }
+/* AL FINAL NO sé si usar EL TRUCO DEL ALMENDRUCO PORQUE MI TIPO DE LETRA "Exo 2"ES DEMASIADO PEQUEÑO */
+
+/* se dejan espacios por razones de facilitar comparativa con el ejemplo original del profe */
 
 body, html{
   scroll-behavior: smooth ;
@@ -24,6 +27,7 @@ body, html{
   line-height: 1.4;
   background-color: rgb(207, 207, 207);
 }
+
 
 body{
   font-size: 1.6rem;
@@ -51,4 +55,237 @@ header{
   top:0;
   z-index: 100;
   background: var(--lighting-color);
+}
+/* código implementado el viernes 22-may-2026 */
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 0;
+}
+
+/* Lista del menú */
+nav ul{
+  display: flex;
+  gap: 2rem;
+}
+
+nav li{
+  font-size: 1.8rem;
+  /* Línea invisible inicialmente */
+  border-bottom: 0.3rem transparent solid;
+  /* transición suave */
+  transition: 0.3s ease-in-out;
+}
+
+nav li:hover{
+  /* línea amarilla al pasar el mouse */
+  border-bottom: 0.3rem var(--secondary-color) solid;
+}
+
+.logo{
+  /* Tamaño grande */
+  font-size: 2.4rem;
+  font-weight: bold;
+}
+/* HERO SECTION */
+
+#hero{
+  background: var(--dark-color);
+  /* Altura mínima pantalla completa */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  border-bottom: 4px solid var(--lighting-color);
+}
+
+#hero .container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap:5rem;
+}
+
+/* Contenedor de la imagen */
+.hero_image{
+  /* ocupa el mismo espacio flexible */
+  flex: 1;
+}
+
+.hero_image img{
+  /* responsive */
+  width: 100%;
+  max-width: 450px;
+  /* borders redondeados */
+  border-radius: 1rem;
+  display: block;
+  /* proporción cuadrada */
+  aspect-ratio: 1/1;
+  /* recorte elegante */
+  object-fit: cover;
+}
+
+/* contenido texto */
+.hero_content{
+  flex: 1;
+}
+
+#hero h1{
+  font-size: 4rem;
+}
+/* texto Hi */
+.hi_text{
+  color: var(--secondary-color);
+  font-size: 6rem;
+  font-weight: bold;
+}
+
+.name_text{
+  font-size: 5rem;
+  font-weight: bold;
+}
+
+/* subtítulo animado */
+#hero h2{
+  font-size: 3.5rem;
+  margin-top: 2rem;
+  /* oculta el texto sobrante */
+  overflow: hidden;
+  /* evita salto línea */
+  white-space: nowrap;
+  /* cursor typing */
+  border-right: 3px solid orange;
+  /* empieza invisible */
+  width: 0;
+  /* animaciones */
+  animation: 
+    typing 4s steps(30, end) forwards,
+    blink 0.8s infinite;
+}
+
+/* ANIMATION TYPING */
+
+@keyframes typing{
+  from{
+    width: 0;
+  }
+  to{
+    width: 75%;
+    /* modificación raftxo: al 100% se iba el cursor hasta el final - no es natural */
+  }
+}
+
+
+/* añadimos el parpadeo al cursor */
+@keyframes blink{
+  50%{
+    border-color: transparent;
+  }
+}
+
+/* la sección de los proyectos "projects */
+#projects{
+  background-color: var(--darker-color);
+  padding: 6rem 2rem;
+}
+
+#projects h3{
+  text-align: center;
+  font-size: 5rem;
+  margin-bottom: 5rem;
+}
+/* grid de proyectos */
+.project_container{
+  display: grid;
+  grid-template-columns: 
+    repeat(auto-fit, minmax(320px, 1fr));
+  gap: 3rem;
+}
+
+/* cada item */
+.grid_item{
+  display: flex;
+  justify-content: center;
+}
+
+.card{
+  width: 100%;
+  max-width: 350px;
+  overflow: hidden;
+  border-radius: 1rem;
+  transition: 0.3s ease-in-out;
+}
+
+.card:hover{
+  transform: scale(1.03);
+}
+
+.card img{
+  width: 100%;
+  /* height: 350px; */
+  object-fit: cover;
+  transition: 0.3s ease-in-out;
+  opacity: 0.7;
+}
+
+.card:hover img{
+  opacity: 1;
+}
+
+.card_content{
+  background: white;
+  color: var(--dark-color);
+  padding: 2rem;
+  text-align: center;
+}
+
+/* contact section */
+#contact {
+    background-color: var(--dark-color);
+    padding: 8rem 2rem;
+}
+
+#contact h2 {
+    text-align: center;
+    font-size: 5rem;
+    margin-bottom: 5rem;
+}
+
+
+.top_contact {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+        gap: 3rem;
+}
+
+.contact_way{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    justify-content: center;
+    background: rgba(255,255,255,0.1);
+    padding: 2rem;
+    border-radius: 1rem;
+    transition: 0.3s ease-in-out;
+}
+
+.contact_way:hover {
+    background: var(--lighting-color);
+    transform: translateY(-5px);
+}
+
+.contact_way i {
+    font-size: 3rem;
+}
+
+.contact_way h3 {
+    font-size: 2rem;
+}
+
+footer {
+    background: black;
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.6rem;
 }
