@@ -37,7 +37,7 @@ body{
 .container{
   max-width: 1300px;
   margin: 0 auto;
-  padding: 0 2.rem;
+  padding: 0 2rem;
   /* revisar eso de 2.rem !!!!  */
 }
 
@@ -95,7 +95,10 @@ nav li:hover{
   /* Altura mínima pantalla completa */
   min-height: 100vh;
   display: flex;
+  justify-content: center;
   align-items: center;
+  gap: 5rem;
+  padding: 0 2rem;
   border-bottom: 4px solid var(--lighting-color);
 }
 
@@ -110,6 +113,8 @@ nav li:hover{
 .hero_image{
   /* ocupa el mismo espacio flexible */
   flex: 1;
+  display: flex;
+  justify-content: center;
 }
 
 .hero_image img{
